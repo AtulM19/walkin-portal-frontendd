@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <link rel="stylesheet" href="./styles/regs.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.1061.0/aws-sdk.min.js"></script>
+</head>
+<body>
+
+    <div id="personal-info-container" class="">
+        <nav class="nav">
+            <img class="nav-img" src="https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/icons/Zeus-LMS-logo.svg" alt="">
+        </nav>
+    
+        <div class="starter">
+            <div class="back-div">
+                <a><img class="back" src="https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/icons/back.svg" alt=""></a>
+            </div>
+            <div class="head-div">
+                <h5 class="head">Create An Account</h5>
+            </div>
+            <div class="button">
+                <button type="button" class="btn">Cancel</button>
+                <button type="button" class="btn disabled">Create</button>
+            </div>
+        </div>
+    
+    
+        <div class="taskbar">
+            <div class="task1">
+                <div class="round1 active">1</div>
+                <p class="round-text">Personal Information</p>
+            </div>
+            <div class="line"></div>
+            <div class="task1">
+                <div class="round1">2</div>
+                <p class="round-text">Qualifications</p>
+            </div>
+            <div class="line"></div>
+            <div class="task1">
+                <div class="round1">3</div>
+                <p class="round-text">Review and Proceed</p>
+            </div>
+        </div>
+    
+        <div class="main">
+            <form class="form1" >
+                <div class="inputs">
+                    <div class="form-input form-child">
+                        <div class="mb-5">
+                            <label for="fname" class="form-label">First Name*</label> <br>
+                            <input type="text" class="form-control" id="fname" name="fname">
+                        </div>
+                        <div class="mb-5">
+                            <label for="lname" class="form-label">Last Name*</label> <br>
+                            <input type="text" class="form-control" id="lname" name="lname">
+                        </div>
+    
+                        <div class="mb-5">
+                            <label for="email" class="form-label">Email*</label> <br>
+                            <input for="email" class="form-control" id="email" type="email" name="email">
+                        </div>
+    
+                        <div class="mb-5">
+                            <label for="phone" class="form-label">Phone Number*</label>
+                            <div class="input-group">
+                                    <span>+</span>
+                                    <span class="phone-tag">91</span>
+                                    <input type="tel" class="form-control inp-phone" id="phone" name="phone">
+                            </div>
+                        </div>
+    
+                        <div class="resume ver-align mb-5" >
+                            <img class="upload" src="https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/icons/Upload_green_24dp.svg" alt="">
+                            <input type="file" id="resume-input" name="resume-input" class="resume-input">
+                            <label class="resume-text" for="resume-input">UPLOAD RESUME</label>
+                        </div>
+    
+                        <div class="mb-5">
+                            <label for="portfolio" class="form-label">Enter Portfolio URL (if any)</label> <br>
+                            <input type="text" class="form-control" id="portfolio" name="portfolio" >
+                        </div>
+    
+                        <div class="mb-5">
+                            <p class="form-label mb-4">Preferred Job Roles*</p>
+                            <div class="check" >
+                                <div class="ver-align">
+                                    <input class="check-btn-preferred-roles" type="checkbox" value="Instructional Designer">
+                                    <label class="remember"> Instructional Designer</label> 
+                                </div>
+                                <div class="ver-align">
+                                    <input class="check-btn-preferred-roles" type="checkbox" value="Software Engineer">
+                                    <label class="remember"> Software Engineer</label>  <br>
+                                </div>
+                                <div class="ver-align">
+                                    <input class="check-btn-preferred-roles" type="checkbox" value="Software Quality Engineer">
+                                    <label class="remember"> Software Quality Engineer</label>
+                                </div>
+                            </div>
+                            
+                        </div>
+    
+                        <div class="mb-5">
+                            <label for="referral" class="form-label">If You Are Registering Via A Referral, Please Mention Full Name Of The Employee Who Referred You</label>
+                            <input type="text" class="form-control" id="referral" name="referral">
+                        </div>
+    
+                        <div class="mb-5 ver-align">
+                            <input class="check-btn" type="checkbox" id="rem" formControlName="sendUpdate">
+                            <label class="remember"for="rem">Send me job related updates via mail</label>
+                        </div>
+                        
+    
+                    </div>
+    
+                    <div class="form-profile form-child">
+                        <img class="profile-pic"  src="https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/images/acc3.png" alt="">
+                        <input type="file" id="profile-image-input" name="profile-image-input" class="profile-image-input">
+                        <label class="upload-text" for="profile-image-input">UPLOAD DISPLAY PICTURE</label>
+                        <p class="pic-msg">Max. image size: 5MB</p>
+                    </div>
+    
+                </div>
+                <div class="button-container">
+                    <button type="button" id="btn-next-personal-info" class="btn btn-bottom">Next</button>
+                </div>
+            </form>
+        </div>
+
+    </div>  
+    
+    <div id="qualifications-container"  class="hide-container">
+        <nav class="nav">
+            <img class="nav-img" src="https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/icons/Zeus-LMS-logo.svg" alt="">
+        </nav>
+
+        <div class="starter">
+            <div class="back-div">
+                <a><img class="back" src="https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/icons/back.svg" alt=""></a>
+            </div>
+            <div class="head-div">
+                <h5 class="head">Create An Account</h5>
+            </div>
+            <div class="button">
+                <button type="button" class="btn">Cancel</button>
+                <button type="button" class="btn disabled" disabled>Create</button>
+            </div>
+        </div>
+
+        <div class="taskbar">
+            <div class="task1">
+                <div class="round1 active">1</div>
+                <p class="round-text">Personal Information</p>
+            </div>
+            <div class="line"></div>
+            <div class="task1">
+                <div class="round1 active">2</div>
+                <p class="round-text">Qualifications</p>
+            </div>
+            <div class="line"></div>
+            <div class="task1">
+                <div class="round1">3</div>
+                <p class="round-text">Review and Proceed</p>
+            </div>
+        </div>
+
+        <div class="qualification">
+            <div class="qualification-header">
+            <h6 class="education-title">Educational Qualifications</h6>
+            <div class="vertical-line"></div>
+            <img class="expand" src="https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/icons/expand-less.svg" alt=""> 
+            </div>
+            <form >
+                <div class="qualification-detail">
+                    <div class="first-details">
+                        <div class="left-content">
+                            <div class="half-content">
+                                <div class="half1">
+                                    <div class="mb-5">
+                                        <label for="percentage" class="form-label mb-4">Aggregate Percentage*</label>
+                                        <input type="text" class="form-control" id="percentage" name="percentage" formControlName="percentage">  
+                                    </div>
+                                    <div class="mb-5">
+                                        <label for="pass-year" class="form-label mb-4">Passing Year*</label>
+                                        <select name="pass-year" id="pass-year" class="form-control">
+                                            <option>2024</option>
+                                            <option>2023</option>
+                                            <option>2022</option>
+                                            <option>2021</option>
+                                        </select>  
+                                    </div>
+                                </div> 
+                                <div class="half2"></div> 
+                            </div>
+                            
+                        </div>
+                        <div class="right-content"></div>
+                    </div>
+                    <div class="education2">
+                        <div class="left-side">
+                            <div class="mb-5">
+                                <label for="qualification" class="form-label mb-4">Qualification*</label>
+                                <select name="qualification" id="qualification" class="form-control" >
+                                    <option>B.Engg</option>
+                                    <option>B.Tech</option>
+                                    <option>M.Engg</option>
+                                    <option>M.Tech</option>
+                                </select>  
+                            </div>
+                            
+                        </div>
+                        <div class="right-side">
+                            <div class="mb-5">
+                                <label for="stream" class="form-label mb-4">Stream*</label>
+                                <select name="stream" id="stream" class="form-control" >
+                                    <option>Computer Engineering</option>
+                                    <option>Information Technology</option>
+                                    <option>Electronics Engineering</option>
+                                </select>  
+                            </div>
+                        </div>
+                    </div>
+                    <div class="education2">
+                        <div class="left-side">
+                            <div class="mb-5">
+                                <label for="college" class="form-label mb-4">College*</label>
+                                <select name="college" id="college" class="form-control" >
+                                    <option>IIT Bombay</option>
+                                    <option>IIT Madras</option>
+                                    <option>IIT Delhi</option>
+                                </select>  
+                            </div>
+                            
+                        </div>
+                        <div class="right-side">
+                            <div class="mb-5">
+                                <label for="other-college" class="form-label mb-4">If others, please enter your college name</label>
+                                <input type="text" class="form-control" id="other-college" name="other-college" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="first-details">
+                        <div class="left-content">
+                            <div class="half-content">
+                                <div class="half1">
+                                    <div class="mb-5">
+                                        <label for="college-location" class="form-label mb-4">Where is your College Located?*</label>
+                                        <input type="text" class="form-control" id="college-location" name="college-location">  
+                                    </div>
+                                </div> 
+                                <div class="half2"></div> 
+                            </div>
+                        </div>
+                        <div class="right-content"></div>
+                    </div> 
+                </div>
+                
+            </form>   
+        </div>
+
+        <div class="qualification">
+            <div class="qualification-header">
+            <h6 class="education-title">Proffessional Qualifications</h6>
+            <div class="vertical-line"></div>
+            <img class="expand" src="https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/icons/expand-less.svg" alt=""> 
+            </div>
+            <form>
+                <div class="qualification-detail">
+                    <label for="experienceType" class="form-label mb-4">Applicant Type*</label>
+                    <div class="radio-container">
+                        <div class="form-check ver-align">
+                            <input type="radio" id="fresher" name="exp" value="Fresher" class="form-check-input radio-btn">
+                            <label for="fresher" class="form-check-label">Fresher</label>
+                        </div>
+                        <div class="form-check ver-align">
+                            <input type="radio" id="experienced" name="exp" value="Experienced" class="form-check-input radio-btn">
+                            <label for="experienced" class="form-check-label">Experienced</label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="qualification">
+            <form >
+                <div class="qualification-detail">
+                    <div  class="first-details">
+                        <div class="left-content">
+                            <div class="half-content">
+                                <div class="half1">
+                                    <div class="mb-5">
+                                        <label for="years-of-experience" class="form-label mb-4">Years of Experience*</label>
+                                        <input type="text" class="form-control" id="years-of-experience" name="years-of-experience" formControlName="expYears">  
+                                    </div>
+                                    <div class="mb-5">
+                                        <label for="current-ctc" class="form-label mb-4">Current CTC* (In Rupees)</label>
+                                        <input type="text" class="form-control" id="current-ctc" name="current-ctc" formControlName="currentCTC">  
+                                    </div>
+                                    <div class="mb-5">
+                                        <label for="expected-ctc" class="form-label mb-4">Expected CTC* (In Rupees)</label>
+                                        <input type="text" class="form-control" id="expected-ctc" name="expected-ctc" formControlName="expectedCTC">  
+                                    </div>
+                                    
+                                </div> 
+                                <div class="half2"></div> 
+                            </div>
+                        </div>
+                        <div class="right-content"></div>
+                    </div>
+                    
+                    <div class="education2">
+                        <div class="left-side">
+                            <div class="mb-5">
+                                <label class="form-label mb-4">Select All The Technologies You Expertise In*</label>
+                                <div class="check" >
+                                    <div class="ver-align">
+                                        <input class="check-btn-tech-expertise" name="tech-1" value="Javascript" type="checkbox">
+                                        <label class="remember"> Javascript</label> 
+                                    </div>
+                                    <div class="ver-align">
+                                        <input class="check-btn-tech-expertise" name="tech-2" value="Angular JS" type="checkbox">
+                                        <label class="remember"> Angular JS</label>  <br>
+                                    </div>
+                                    <div class="ver-align">
+                                        <input class="check-btn-tech-expertise" name="tech-3" value="React" type="checkbox">
+                                        <label class="remember"> React</label>
+                                    </div>
+                                    <div class="ver-align">
+                                        <input class="check-btn-tech-expertise" name="tech-4" value="Node JS" type="checkbox">
+                                        <label class="remember"> Node JS</label>
+                                    </div>
+                                    <div class="ver-align">
+                                        <input class="check-btn-tech-expertise" type="checkbox" value="Others">
+                                        <label class="remember"> Others</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="left-side">
+                            <div class="mb-5 limit">
+                                <label for="other-expertise-tech" class="form-label mb-4">If others, please mention</label>
+                                <input type="text" class="form-control" id="other-expertise-tech" name="other-expertise-tech" >  
+                            </div>
+                        </div>
+                        <div class="right-side"></div>
+                    </div>
+
+                    <div class="education2">
+                        <div class="left-side">
+                            <div class="mb-5">
+                                <label for="preferredRole" class="form-label mb-4">Select All The Technologies You Are Familiar In*</label>
+                                <div class="check" >
+                                    <div class="ver-align">
+                                        <input class="check-btn-tech-familiar" type="checkbox" value="Javascript">
+                                        <label class="remember"> Javascript</label> 
+                                    </div>
+                                    <div class="ver-align">
+                                        <input class="check-btn-tech-familiar" type="checkbox" value="Angular JS">
+                                        <label class="remember"> Angular JS</label>  <br>
+                                    </div>
+                                    <div class="ver-align">
+                                        <input class="check-btn-tech-familiar" type="checkbox" value="React">
+                                        <label class="remember"> React</label>
+                                    </div>
+                                    <div class="ver-align">
+                                        <input class="check-btn-tech-familiar" type="checkbox" value="Node JS">
+                                        <label class="remember"> Node JS</label>
+                                    </div>
+                                    <div class="ver-align">
+                                        <input class="check-btn-tech-familiar" type="checkbox" value="Others">
+                                        <label class="remember"> Others</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="education2">
+                        <div class="left-side">
+                            <div class="mb-5">
+                                <label for="other-familar-tech" class="form-label mb-4">If others, please mention</label>
+                                <input type="text" class="form-control" id="other-familiar-tech" name="other-familar-tech">  
+                            </div>
+                        </div>
+                        <div class="right-side"></div>
+                    </div>
+
+                    <div id="conditional" class="hidden">
+                        <div class="education2 mb-5">
+                            <div class="left-side">
+                                <label for="isNoticePeriod" class="form-label mb-4">Are you currently on notice period?*</label>
+                                <div class="radio-container">
+                                    <div class="form-check ver-align">
+                                        <input type="radio" id="notice-period-yes" value="Yes" class="form-check-input radio-btn" name="notice-period">
+                                        <label for="notice-period" class="form-check-label">Yes</label>
+                                    </div>
+                                    <div class="form-check ver-align">
+                                        <input type="radio" id="notice-period-no" value="No" class="form-check-input radio-btn" name="notice-period">
+                                        <label for="notice-period" class="form-check-label">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right-side"></div>
+                        </div>
+
+                        <div  class="education2">
+                            <div class="left-side">
+                                <div class="mb-5">
+                                    <label for="select-notice-date" class="form-label mb-4" >If Yes, when will your notice period end?*</label>
+                                    <input type="date" class="form-control" id="notice-period-date" name="select-notice-date"> 
+                                </div>
+                            </div>
+                            <div class="right-side">
+                                <div class="mb-5">
+                                    <label for="notice-period-month" class="form-label mb-4">How long is your notice period?* (Mention in months)</label>
+                                    <select name="notice-period-month" id="notice-period-month" class="form-control" >
+                                        <option disabled selected>Select Month</option>
+                                        <option selected>1 Month</option>
+                                        <option selected>2 Months</option>
+                                        <option selected>3 Months</option>
+                                    </select>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="education2 mb-5">
+                        <div class="left-side">
+                            <label for="isAppeared" class="form-label mb-4">Have You Appeared For Any Test By Zeus in the past 12 months?*</label>
+                            <div class="radio-container">
+                                <div class="form-check ver-align">
+                                    <input type="radio" id="appeared-for-zeus-yes" value="Yes" name="appeared"  class="form-check-input radio-btn">
+                                    <label for="isAppeared" class="form-check-label">Yes</label>
+                                </div>
+                                <div class="form-check ver-align">
+                                    <input type="radio" id="appeared-for-zeus-no" value="No" name="appeared" class="form-check-input radio-btn">
+                                    <label for="isAppeared" class="form-check-label">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-side"></div>
+                    </div>
+
+                    <div   class="education2">
+                        <div class="left-side">
+                            <div class="mb-5">
+                                <label for="previously-applied-role" class="form-label mb-4">If Yes, which role did you apply for?</label>
+                                <input type="text" class="form-control" id="previously-applied-role" name="previously-applied-role">  
+                            </div>
+                        </div>
+                        <div class="right-side"></div>
+                    </div>
+                    
+
+                </div>
+            </form>
+
+            <div class="button-container">
+                <button type="button" id="btn-prev-qualifications"  class="btn shadow">Previous</button>
+                <button type="button" id="btn-next-qualifications"  class="btn shadow">Next</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="submit-container" class="hide-container">
+        <nav class="nav">
+            <img class="nav-img" src="https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/icons/Zeus-LMS-logo.svg" alt="">
+        </nav>
+
+        <div class="starter">
+            <div class="back-div">
+                <a><img class="back" src="https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/icons/back.svg" alt=""></a>
+            </div>
+            <div class="head-div">
+                <h5 class="head">Create An Account</h5>
+            </div>
+            <div class="button">
+                <button type="button" class="btn">Cancel</button>
+                <button type="button" class="btn" id="btn-create-submit">Create</button>
+            </div>
+        </div>
+
+        <div class="taskbar">
+            <div class="task1">
+                <div class="round1 active">1</div>
+                <p class="round-text">Personal Information</p>
+            </div>
+            <div class="line"></div>
+            <div class="task1">
+                <div class="round1 active">2</div>
+                <p class="round-text">Qualifications</p>
+            </div>
+            <div class="line"></div>
+            <div class="task1">
+                <div class="round1 active">3</div>
+                <p class="round-text">Review and Proceed</p>
+            </div>
+        </div>
+
+        <div class="heading mb-5">
+            <h6 class="heading-text">Personal Information</h6>
+            <img class="heading-img" src="https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/icons/edit-removebg-preview.png" alt="">
+            <p class="edit-text" id="edit-text-personal-info">Edit</p>
+        </div>
+
+        <div class="inputs">
+            <div class="form-input form-child">
+                <div class="mb-5">
+                    <label for="fname" class="form-label mb-4">First Name</label>
+                    <h5 id="fname-preview"></h5>
+                </div>
+                <div class="mb-5">
+                    <label for="lname" class="form-label mb-4">Last Name</label>
+                    <h5 id="lname-preview"></h5>
+                </div>
+
+                <div class="mb-4">
+                    <label for="email" class="form-label mb-4">Email</label>
+                    <h5 id="email-preview"></h5>
+                </div>
+
+                <div class="mb-5">
+                    <label for="phone" class="form-label mb-4">Phone Number</label>
+                        <div>
+                            <span>+ &nbsp;91 &nbsp; </span>
+                            <span id="phone-preview"></span>
+                        </div>
+                    </div>
+
+                <div class="resume mb-5" >
+                    <img class="upload"  src="https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/icons/upload-black.svg" alt="">
+                    <h5 class="me-3">UPLOAD RESUME</h5>
+                    <h5 class="left-space" id="resume-preview"></h5>
+                </div>
+
+                <div class="mb-5">
+                    <label for="portfolio"  class="form-label mb-4">Enter Portfolio URL (if any)</label>
+                    <h5 id="portfolio-url-preview"></h5>
+                </div>
+
+                <div class="mb-5">
+                    <label for="preferredRole" class="form-label mb-4">Preferred Job Roles</label>
+                    <div class="check">
+                        <h5 id="selected-roles-preview"></h5>
+                    </div>
+                </div>
+
+                <div class="mb-5">
+                    <label for="referral" class="form-label mb-4">If You Are Registering Via A Referral, Please Mention Full Name Of The Employee Who Referred You</label>
+                    <h5 id="referral-preview">-</h5>
+                    <!-- <input type="text" class="form-control" id="referral" name="referral" formControlName="referral"> -->
+                </div>
+
+                <div class="updates mb-5">
+                    <img  src="https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/icons/check_box_black.svg" alt="">
+                    <label class="remember left-space" for="rem">Send me job related updates via mail</label>
+                </div>
+                
+
+            </div>
+
+            <div class="form-profile form-child">
+                <img class="profile-pic" id="profile-image-preview" src="https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/images/acc3.png" alt="">
+            </div>
+        </div>
+
+        <div class="heading mb-5">
+            <h6 class="heading-text">Qualifications</h6>
+            <img class="heading-img" src="https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/icons/edit-removebg-preview.png" alt="">
+            <p class="edit-text" id="edit-text-qualifications">Edit</p>
+        </div>
+
+        <div class="qualification">
+            <div class="qualification-header">
+                <h6 class="education-title">Educational Qualifications</h6>
+            </div>
+            <div class="qualification-detail">
+                <div class="first-details">
+                    <div class="left-content">
+                        <div class="half-content">
+                            <div class="half1">
+                                <div class="mb-5">
+                                    <label for="percentage" class="form-label mb-4">Aggregate Percentage</label>
+                                    <h5 id="percentage-preview"></h5>
+                                </div>
+                                <div class="mb-5">
+                                    <label for="pass-year" class="form-label mb-4">Passing Year</label>
+                                    <h5 id="passing-year-preview"></h5>
+                                </div>
+                            </div> 
+                            <div class="half2"></div> 
+                        </div>
+                        
+                    </div>
+                    <div class="right-content"></div>
+                </div>
+                    <div class="education2">
+                    <div class="left-side">
+                        <div class="mb-5">
+                            <label for="qualification" class="form-label mb-4">Qualification</label>
+                            <h5 id="qualification-preview"></h5>
+                        </div>
+                        
+                    </div>
+                    <div class="right-side">
+                        <div class="mb-5">
+                            <label for="stream" class="form-label mb-4">Stream</label>
+                            <h5 id="stream-preview"></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="education2">
+                    <div class="left-side">
+                        <div class="mb-5">
+                            <label for="college" class="form-label mb-4">College</label>
+                            <h5 id="college-preview"></h5>
+                        </div>
+                        
+                    </div>
+                    <div class="right-side">
+                        <div class="mb-4">
+                            <label for="otherclg" class="form-label mb-4">If others, please enter your college name</label>
+                            <h5 id="other-college-preview"></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="first-details">
+                    <div class="left-content">
+                        <div class="half-content">
+                            <div class="half1">
+                                <div class="mb-5">
+                                    <label for="clglocation" class="form-label mb-4">Where is your College Located?</label>
+                                    <h5 id="college-location-preview"></h5>
+                                </div>
+                            </div> 
+                            <div class="half2"></div> 
+                        </div>
+                        
+                    </div>
+                    <div class="right-content"></div>
+                </div> 
+            </div>
+        </div>
+
+        <div class="qualification">
+            <div class="qualification-header">
+            <h6 class="education-title">Professional Qualifications</h6>
+            </div>
+
+                <div class="qualification-detail">
+                    <label for="experienceType" class="form-label mb-4">Applicant Type</label>
+                    <h5 id="applicant-type-preview"></h5>
+                </div>
+        </div>
+
+        <div class="qualification">
+            <div class="qualification-detail">
+                <div class="first-details">
+                    <div class="left-content">
+                        <div class="half-content">
+                            <div class="half1">
+                                <div class="mb-5">
+                                    <label for="expYears" class="form-label mb-4">Years of Experience</label>
+                                    <h5 id="years-of-experience-preview"></h5>
+                                </div>
+                                <div class="mb-5">
+                                    <label for="currentCTC" class="form-label mb-4">Current CTC (In Rupees)</label>
+                                    <h5 id="current-ctc-preview"></h5>
+                                </div>
+                                <div class="mb-5">
+                                    <label for="expectedCTC" class="form-label mb-4">Expected CTC (In Rupees)</label>
+                                    <h5 id="expected-ctc-preview"></h5>
+                                </div>
+                                
+                            </div> 
+                            <div class="half2"></div> 
+                        </div>
+                    </div>
+                    <div class="right-content"></div>
+                </div>
+
+                <div>
+                    <div class="left-side">
+                        <div class="mb-5">
+                            <label for="preferredRole" class="form-label mb-4">Select All The Technologies You Expertise In</label>
+                            
+                            <div class="check">
+                                <h5 id="expertise-tech-preview"></h5>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="left-side">
+                        <div class="mb-5">
+                            <label for="otherExpertiseTech" class="form-label mb-4">If others, please mention</label>
+                            <h5 id="other-expertise-tech-preview"></h5>
+                        </div>
+                    </div>
+                    <div class="right-side"></div>
+                </div>
+
+                <div class="education2">
+                    <div class="left-side">
+                        <div class="mb-5">
+                            <label for="preferredRole" class="form-label mb-4">Select All The Technologies You Are Familiar In</label>
+                            <div class="check">
+                                <h5 id="familiar-tech-preview" ></h5>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education2">
+                    <div class="left-side">
+                        <div class="mb-5">
+                            <label for="otherFamilarTech" class="form-label mb-4">If others, please mention</label>
+                            <h5 id="other-familar-tech-preview"></h5>
+                        </div>
+                    </div>
+                    <div class="right-side"></div>
+                </div>
+
+                <div>
+                    <div class="left-side mb-5">
+                        <label for="isNoticePeriod" class="form-label mb-4">Are you currently on notice period?</label>
+                        <h5 id="is-notice-period-preview"></h5>
+                    </div>
+                    <div class="right-side"></div>
+                </div>
+
+                <div id="conditional" class="hidden">
+                    <div class="left-side">
+                        <div class="mb-5">
+                            <label for="selectNoticeDate" class="form-label mb-4" >If Yes, when will your notice period end?</label>
+                            <h5 id="notice-period-date-preview"></h5>
+                        </div>
+                    </div>
+                    <div class="right-side">
+                        <div class="mb-5">
+                            <label for="noticeMonth" class="form-label mb-4">How long is your notice period? (Mention in months)</label>
+                            <h5 id="notice-period-month-preview">2 Months</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education2 mb-5">
+                    <div class="left-side">
+                        <label for="isAppeared" class="form-label mb-4">Have You Appeared For Any Test By Zeus in the past 12 months?</label>
+                        <h5 id="appeared-for-zeus-preview"></h5>
+                    </div>
+                    <div class="right-side"></div>
+                </div>
+
+                <div class="education2">
+                    <div class="left-side">
+                        <div class="mb-4">
+                            <label for="previousAppliedRole" class="form-label mb-4">If Yes, which role did you apply for?</label>
+                            <h5 id="appeared-for-role-preview"></h5>
+                        </div>
+                    </div>
+                    <div class="right-side"></div>
+                </div>
+                
+
+            </div>
+            <!-- </form> -->
+        </div>
+
+        <div class="button-container">
+            <button type="button" id="btn-prev-submit" class="btn btn-bottom">Previous</button>
+        </div>
+
+    </div>
+
+    <script type="module" src="./js/regs.js"></script>
+</body>
+</html>
+
+<!-- 
+btn_create_submit.addEventListener("click", () => {
+    // Personal Information
+    console.log('First Name:', firstname.value);
+    console.log('Last Name:', lastname.value);
+    console.log('Email:', email.value);
+    console.log('Phone Number:', phone.value);
+    console.log('Resume Input:', resume_input.value);
+    console.log('Portfolio:', portfolio.value);
+    console.log('Referral:', referral.value);
+
+    // Preffered Roles (List)
+    for (let i = 0; i < preferred_roles.length; i++) {
+        console.log(`Preffered Role ${i + 1}:`, preferred_roles[i].value);
+    }
+
+    // Job Related Updates (List)
+    for (let i = 0; i < job_related_updates.length; i++) {
+        console.log(`Job Related Update ${i + 1}:`, job_related_updates[i].value);
+    }
+
+    // Qualifications (Page 2)
+    console.log('Passing Year:', pass_year.value);
+    console.log('Qualification:', qualification.value);
+    console.log('Stream:', stream.value);
+    console.log('College:', college.value);
+    console.log('Other College:', other_college.value);
+    console.log('College Location:', college_location.value);
+    console.log('Years of Experience:', years_of_experience.value);
+    console.log('Current CTC (In Rupees):', current_ctc.value);
+    console.log('Expected CTC (In Rupees):', expected_ctc.value);
+    console.log('Other Expertise in Technology:', other_expertise_tech.value);
+    console.log('Other Familiar Technology:', other_familiar_tech.value);
+
+    // Notice Period (Radio Buttons)
+    console.log('Notice Period (Yes):', notice_period_yes.checked);
+    console.log('Notice Period (No):', notice_period_no.checked);
+    console.log('Notice Period End Date:', notice_period_date.value);
+    console.log('Notice Period (Months):', notice_period_month.value);
+
+    // Appeared for Zeus Test (Radio Buttons)
+    console.log('Appeared for Zeus Test (Yes):', appeared_for_zeus_yes.checked);
+    console.log('Appeared for Zeus Test (No):', appeared_for_zeus_no.checked);
+    console.log('Previously Applied Role:', previously_applied_role.value);
+
+    // Tech Expertise In (List)
+    for (let i = 0; i < tech_expertise_in.length; i++) {
+        console.log(`Tech Expertise In ${i + 1}:`, tech_expertise_in[i].value);
+    }
+
+    // Tech Familiar In (List)
+    for (let i = 0; i < tech_familiar_in.length; i++) {
+        console.log(`Tech Familiar In ${i + 1}:`, tech_familiar_in[i].value);
+    }
+
+    // Personal Info Container, Qualifications Container, Submit Container
+    console.log('Personal Info Container:', personal_info_container);
+    console.log('Qualifications Container:', qualifications_container);
+    console.log('Submit Container:', submit_container);
+
+    // Buttons
+    console.log('Button Next (Personal Info):', btn_next_personal_info);
+    console.log('Button Previous (Qualifications):', btn_prev_qualifications);
+    console.log('Button Next (Qualifications):', btn_next_qualifications);
+    console.log('Button Previous (Submit):', btn_prev_submit);
+    console.log('Button Create Submit:', btn_create_submit);
+
+    // Submit Page
+    // Personal Information
+    console.log('Submit Page - First Name:', fname_preview.textContent);
+    console.log('Submit Page - Last Name:', lname_preview.textContent);
+    console.log('Submit Page - Email:', email_preview.textContent);
+    console.log('Submit Page - Phone Number:', phone_preview.textContent);
+    console.log('Submit Page - Resume:', resume_preview.textContent);
+    console.log('Submit Page - Portfolio URL:', portfolio_url_preview.textContent);
+
+    // Selected Roles (List)
+    selected_roles_preview.forEach((role, index) => {
+        console.log(`Submit Page - Selected Role ${index + 1}:`, role.textContent);
+    });
+
+    console.log('Submit Page - Referral:', referral_preview.textContent);
+    console.log('Submit Page - Is on Notice Period:', is_notice_period_preview.textContent);
+    console.log('Submit Page - Notice Period End Date:', notice_period_date_preview.textContent);
+    console.log('Submit Page - Notice Period (Months):', notice_period_month_preview.textContent);
+    console.log('Submit Page - Appeared for Zeus Test:', appeared_for_zeus_preview.textContent);
+    console.log('Submit Page - Appeared for Role:', appeared_for_role_preview.textContent);
+
+    // Profile Image Preview
+    console.log('Submit Page - Profile Image Source:', profile_image_preview.getAttribute('src'));
+
+    // Qualifications (Page 2)
+    console.log('Submit Page - Aggregate Percentage:', percentage_preview.textContent);
+    console.log('Submit Page - Passing Year:', passing_year_preview.textContent);
+    console.log('Submit Page - Qualification:', qualification_preview.textContent);
+    console.log('Submit Page - Stream:', stream_preview.textContent);
+    console.log('Submit Page - College:', college_preview.textContent);
+    console.log('Submit Page - Other College:', other_college_preview.textContent);
+    console.log('Submit Page - College Location:', college_location_preview.textContent);
+    console.log('Submit Page - Applicant Type:', applicant_type_preview.textContent);
+    console.log('Submit Page - Years of Experience:', years_of_experience_preview.textContent);
+    console.log('Submit Page - Current CTC (In Rupees):', current_ctc_preview.textContent);
+    console.log('Submit Page - Expected CTC (In Rupees):', expected_ctc_preview.textContent);
+    console.log('Submit Page - Expertise in Technology:', expertise_tech_preview.textContent);
+    console.log('Submit Page - Other Expertise in Technology:', other_expertise_tech_preview.textContent);
+
+    // Familiar Technology (List)
+    familiar_tech_preview.forEach((tech, index) => {
+        console.log(`Submit Page - Familiar Technology ${index + 1}:`, tech.textContent);
+    });
+
+    console.log('Submit Page - Other Familiar Technology:', other_familiar_tech_preview.textContent);
+
+}) -->

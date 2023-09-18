@@ -1,0 +1,199 @@
+/* @font-face {
+  font-family: Quicksand;
+  src: url('https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/font/Quicksand-VariableFont_wght.ttf') format("truetype-variations");
+  font-style: normal;
+  font-weight: 300 800;
+} */
+
+@font-face {
+    src: url("https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/font/Quicksand-Bold.ttf");
+    font-family: Quicksand-Bold;
+}
+@font-face {
+    src: url("https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/font/Quicksand-Light.ttf");
+    font-family: Quicksand-Light;
+}
+@font-face {
+    src: url("https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/font/Quicksand-Medium.ttf");
+    font-family: Quicksand-Medium;
+}
+@font-face {
+    src: url("https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/font/Quicksand-Regular.ttf");
+    font-family: Quicksand-Regular;
+}
+@font-face {
+    src: url("https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/font/Quicksand-SemiBold.ttf");
+    font-family: Quicksand-SemiBold;
+}
+
+
+body, html {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    background-color: #EEEEEE;
+    /* font-family: Quicksand, "Helvetica Neue"; */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.nav {
+    background-color: #25313F;
+    padding: 10px 40px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #31B9E4;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* flex is used to align and arrange the container class and content-2 class */
+.main {
+    background-color: #EEEEEE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-around;
+}
+
+.container {
+    background-color: #FFFFFF;
+    width: 50%;
+    border-radius: 3px;
+    border-top: 5px solid #3AC7EC;
+    padding: 10px 35px;
+    margin-bottom: 25px;
+}
+
+input {
+    outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 80%;
+  }
+}
+
+
+.title {
+    font-size: 28px;
+    text-align: center;
+    margin: 10px 5px;
+    font-family: Quicksand-Bold;
+}
+
+
+.cred {
+    width:98%;
+    height: 35px;
+    border: transparent;
+    border-bottom: 2px solid #E0E0E0;
+    font-size:16px;
+    font-family: Quicksand-Light;
+    font-weight: bold;
+}
+
+
+.eye {
+    background: transparent url('https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/icons/preview.svg') right no-repeat content-box;
+}
+
+.forgot {
+    text-align: end;
+    color: #1F7A54;
+    margin-top: 5px;
+    cursor: pointer;
+    font-family: Quicksand-SemiBold;
+}
+
+.check {
+    display:flex;
+    margin-bottom: 25px;
+    align-items: center;
+}
+    
+.check-btn {
+    width:20px;
+    height:20px;
+    margin-right:7px;
+    accent-color: #197f54;
+}
+
+.remember {
+    font-family: Quicksand-SemiBold;
+    margin-top: 2px;
+}
+
+.log-btn {
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 25px;   
+}
+
+.log-in {
+    width: 50%;
+    height: 45px;
+    color: black;
+    background-color: #3FD28B;
+    border-radius: 3px;
+    border: none;
+    font-size:medium;
+    box-shadow: 3px 3px 12px #bebebe;
+    font-family: Quicksand-SemiBold;
+}
+
+
+.content-2{
+    display: flex;
+    align-items: center;
+    color: #1F7A54; 
+    font-family: Quicksand-SemiBold;
+}
+
+.extra-detail{
+    cursor: pointer;
+    font-size:large;
+}
+
+.vl {
+    border-left: 2px solid #C5C6C6;
+    height: 18px;
+    margin: 0px 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.not-reg {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    font-family: Quicksand-SemiBold;
+}
+
+.create-acc {
+    font-size: 14px;
+    margin: 0 0 10px 0;
+    color: #1F7A54;
+    font-family: Quicksand-SemiBold;
+}
+
+.mb-3 {
+    margin-bottom: 10px;
+}
+
+.mb-4 {
+    margin-bottom: 20px;
+}
+
+.mb-5 {
+    margin-bottom: 30px;
+}
+
+.mb-6 {
+    margin-bottom: 40px;
+}

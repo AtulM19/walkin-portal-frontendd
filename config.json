@@ -1,0 +1,5 @@
+{
+  "AWS_BASE_URL": "https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server",
+  "API_URL": "https://localhost:7205", 
+  "ADDITIONAL_HASH": "473160fa18b8c28f3bd3e9648eb56f"
+}

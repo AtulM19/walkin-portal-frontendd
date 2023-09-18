@@ -1,0 +1,459 @@
+/* @font-face {
+  font-family: Quicksand;
+  src: url('https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/font/Quicksand-VariableFont_wght.ttf') format("truetype-variations");
+  font-style: normal;
+  font-weight: 300 800;
+} */
+
+@font-face {
+    src: url("https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/font/Quicksand-Bold.ttf");
+    font-family: Quicksand-Bold;
+}
+@font-face {
+    src: url("https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/font/Quicksand-Light.ttf");
+    font-family: Quicksand-Light;
+}
+@font-face {
+    src: url("https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/font/Quicksand-Medium.ttf");
+    font-family: Quicksand-Medium;
+}
+@font-face {
+    src: url("https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/font/Quicksand-Regular.ttf");
+    font-family: Quicksand-Regular;
+}
+@font-face {
+    src: url("https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/font/Quicksand-SemiBold.ttf");
+    font-family: Quicksand-SemiBold;
+}
+
+
+body, html {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    background-color: #EEEEEE;
+    font-family: Quicksand-Medium;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.nav {
+    background-color: #25313F;
+    padding: 10px 40px;
+    border-bottom: 2px solid #31B9E4;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-img-2 {
+    width: 5%;
+}
+
+
+/************************************************************************************************************************************************/
+
+.resume-input {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+
+.main {
+    background-color: #EEEEEE;
+}
+
+.allCards {
+    background-color: #FFFFFF;
+    margin: 25px;
+}
+
+.card {
+    margin-bottom: 25px;
+}
+
+.card-pad {
+    padding: 25px 25px 10px 25px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.walkin-title {
+    color: #1F7A54;
+    font-family: Quicksand-Semibold;
+    font-size: 24px;
+    margin: 0;
+}
+
+.expire-div {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.expire {
+    color: #D10107;
+    background-color: #FFE4E6;
+    font-family: Quicksand-SemiBold;
+    font-size: small;
+    padding-left: 8px;
+    width: 115px;
+    position: relative;
+    top: 25px;
+    right: 50px;
+    z-index: 1;
+}
+
+.btn-apply {
+    filter: opacity(0.5);
+}
+
+.label {
+    font-family: Quicksand-SemiBold;
+    color: #838383;
+    font-size: smaller;
+    margin-bottom: 0px;
+}
+
+.date-time {
+    display: flex;
+    align-items: center;
+}
+
+.input-data {
+    font-family: Quicksand-SemiBold;
+    font-size: 15px;
+}
+
+.vl {
+    border-left: 1px solid #E0E0E0;
+    height: 15px;
+    margin: 3px 20px 0px 20px;
+}
+
+.loc-img {
+    float: left;
+    height: 17px;
+    margin-right: 5px;
+    filter: opacity(0.7);
+}
+
+.location {
+    min-width: 100px;;
+}
+
+.custom-hr {
+    background-color: #c2c2c2;
+    height: 1px;
+    border: none;
+}
+
+.job-roles {
+    display: flex;
+    align-items: center;
+}
+
+.role-img {
+    float: left;
+    height: 25px;
+    width: 25px;
+    margin-right: 5px;
+    border-radius: 50%;
+    border: 1px solid #3F3F3F;
+}
+
+.apply-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    background-color: #3FD28B;
+    font-family: Quicksand-SemiBold;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+}
+
+.internship {
+    background-color: #EEDD6B;
+    font-family: Quicksand-Medium;
+    border-radius: 10px;
+    font-size: 12px;
+    width: 260px;
+    padding: 0px 12px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+.qualification-header {
+    background-color: #DBEFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left:15px;
+    padding-right: 10px;
+}
+
+.education-title {
+    font-family: Quicksand-SemiBold;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: large;
+}
+
+.vertical-line {
+    border-left: 1px solid #A4B3BF;
+    height: 56px;
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+.expand {
+    height: 30px;
+    cursor: pointer;
+}
+
+.content {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    background-color: #FFFFFF;
+}
+
+.input-data {
+    font-size: 14px;
+    font-family: Quicksand-Medium;
+    margin: 0;
+    margin-bottom: 5px;
+    line-height: 1.5em;
+    
+}
+
+.input-data-roles {
+    font-size: 14px;
+    font-family: Quicksand-Medium;
+}
+
+.text-green {
+    color: #1F7A54;
+    font-family: Quicksand-SemiBold;
+}
+
+.inner-content {
+    margin: 25px;
+}
+
+.rounds {
+margin: 10px 0px;
+}
+
+.slide-down {
+    max-height: 1500px; /* Adjust the value to the maximum height you expect */
+}
+
+.slide-up {
+    max-height: 0;
+}
+
+.form-check-label {
+    font-family: Quicksand-SemiBold;
+    margin-left: 5px;
+}
+
+.radio-btn {
+    width:20px;
+    height:20px;
+    border: 2px solid #0D6EFD;
+}
+
+.btn-accordion {
+    border: none;
+    background-color: transparent;
+
+}
+
+.cardTime {
+    background-color: #FFFFFF;
+    padding: 20px;
+    margin: 25px;
+}
+
+.card-time-title {
+    font-family: Quicksand-Semibold;
+}
+
+.displayRoles{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.check {
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+}
+
+.resume {
+    display: flex;
+    align-items: center;
+}
+
+.upload {
+    height: 35px;
+}
+
+.resume-text {
+    color: #197f54;
+    font-size: 14px;
+    font-family: QuickSand-SemiBold;
+    cursor: pointer;
+}
+
+
+.check-btn {
+    width:20px;
+    height:20px;
+    margin-right:7px;
+    accent-color: #197f54;
+    cursor: pointer;
+}
+
+.remember {
+    font-family: Quicksand-SemiBold;
+    margin-top: 2px;
+}
+
+
+.role-header {
+    background-color: #DBEFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left:15px;
+    padding-right: 10px;
+    margin: 25px;
+}
+
+.role-desc {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    background-color: #FFFFFF;
+    margin: -25px 25px 25px 25px;
+}
+
+.btn-role {
+    background-color: transparent;
+    border: none;
+}
+
+.up {
+    cursor: pointer;
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+}
+
+.up > img {
+    background-color: #3FD28B;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+    .btn-apply {
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+    }
+  
+    .role-header-last {
+        margin-bottom: 50px;
+    }
+}
+
+/************************************************************************************************************************************************/
+
+input[type=radio]:checked {
+    accent-color: #197f54;
+    border: 2px solid #197f54;
+}
+
+.mt-4 {
+    margin-top: 10px;
+}
+
+.mb-4 {
+    margin-bottom: 10px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mb-15 {
+    margin-bottom: 20px;
+}
+
+.mb-5 {
+    margin-bottom: 30px;
+}
+
+.drop-shadow {
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+}
+
+.shadow {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+button {
+    cursor: pointer;
+}
+
+.visible {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.ver-align {
+    display: flex;
+    align-items: center;
+}
+
+label {
+    display: block;
+}
+
+.left-space {
+    margin-left: 10px;
+}
+
+.limit {
+    width: 50%;
+}
+
+/************************************************************************************************************************************************/

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="./styles/register.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.4.3/bcrypt.js"></script>
+</head>
+<body>
+    
+    <nav class="nav">
+        <img class="nav-img" src="https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/icons/logo-used-in-header.svg" alt="">
+    </nav>
+
+    <main class="main">
+
+        <div class="container">
+            <form>
+                <div class="title">Register</div>
+    
+                <input class="cred" id="email" type="email" placeholder="Email ID*" name="email" >
+                <div class="forgot mb-3">FORGOT EMAIL ID?</div>
+                
+                <input class="cred eye mb-5" id="password" type="password" placeholder="Password*" name="password">
+
+                <input class="cred eye mb-6" id="confirm-password" type="password" placeholder="Confirm Password*" name="password">
+                
+                <!-- <div class="check">
+                    <input class="check-btn" id="check-btn" type="checkbox" id="rem">
+                    <label class="remember"for="rem">Remember Me</label>
+                </div> -->
+    
+                <div class="log-btn">
+                    <button class="btn log-in" id="register-btn" >Register</button>
+                </div>
+    
+                <div class="text-center">
+                    <p class="not-reg">Already Have an account?</p>
+                    <h6 class="create-acc"><a href="./login.html" class="create-acc">Log In</a></h6>
+                </div>
+            </form>
+        </div>
+
+        <div class="content-2">
+            <h4 class="extra=detail">About</h4>
+            <div class="vl"></div>
+            <h4 class="extra-detail">Contact Us</h4>
+        </div>
+
+    </main>
+    <script type="module" src="./js/register.js"></script>
+</body>
+</html>

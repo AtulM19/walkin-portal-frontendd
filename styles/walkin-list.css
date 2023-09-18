@@ -1,0 +1,221 @@
+/* @font-face {
+  font-family: Quicksand;
+  src: url('https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/font/Quicksand-VariableFont_wght.ttf') format("truetype-variations");
+  font-style: normal;
+  font-weight: 300 800;
+} */
+
+@font-face {
+    src: url("https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/font/Quicksand-Bold.ttf");
+    font-family: Quicksand-Bold;
+}
+@font-face {
+    src: url("https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/font/Quicksand-Light.ttf");
+    font-family: Quicksand-Light;
+}
+@font-face {
+    src: url("https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/font/Quicksand-Medium.ttf");
+    font-family: Quicksand-Medium;
+}
+@font-face {
+    src: url("https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/font/Quicksand-Regular.ttf");
+    font-family: Quicksand-Regular;
+}
+@font-face {
+    src: url("https://s3-ap-south-1.amazonaws.com/walkin-portal-file-server/assets/font/Quicksand-SemiBold.ttf");
+    font-family: Quicksand-SemiBold;
+}
+
+
+body, html {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    background-color: #EEEEEE;
+    /* font-family: Quicksand, "Helvetica Neue"; */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.nav {
+    background-color: #25313F;
+    padding: 10px 40px;
+    border-bottom: 2px solid #31B9E4;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-img-2 {
+    width: 5%;
+}
+
+
+/************************************************************************************************************************************************/
+
+
+
+.mb-4 {
+    margin-bottom: 10px;
+}
+
+.mb-5 {
+    margin-bottom: 20px;
+}
+
+.drop-shadow {
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+}
+
+.shadow {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+
+.visible {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.ver-align {
+    display: flex;
+    align-items: center;
+}
+
+label {
+    display: block;
+}
+
+.left-space {
+    margin-left: 10px;
+}
+
+.limit {
+    width: 50%;
+}
+
+/************************************************************************************************************************************************/
+
+
+.main {
+    background-color: #EEEEEE;
+}
+
+.allCards {
+    padding: 0px 25px;
+}
+
+.card {
+    background-color: #FFFFFF;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.walkin-title {
+    color: #1F7A54;
+    font-family: Quicksand-Semibold;
+    font-size: 24px;
+    margin: 0;
+}
+
+.expire-div {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.expire {
+    color: #D10107;
+    background-color: #FFE4E6;
+    font-family: Quicksand-SemiBold;
+    font-size: small;
+    padding-left: 8px;
+    width: 115px;
+    position: relative;
+    top: 25px;
+    right: 50px;
+    z-index: 1;
+}
+
+.label {
+    font-family: Quicksand-SemiBold;
+    color: #838383;
+    font-size: smaller;
+    margin-bottom: 5px;
+}
+
+.date-time {
+    display: flex;
+    align-items: center;
+}
+
+.input-data {
+    font-family: Quicksand-SemiBold;
+    font-size: 15px;
+}
+
+.vl {
+    border-left: 1px solid #E0E0E0;
+    height: 15px;
+    margin: 3px 20px 0px 20px;
+}
+
+.loc-img {
+    float: left;
+    height: 17px;
+    margin-right: 5px;
+    filter: opacity(0.7);
+}
+
+.location {
+    min-width: 100px;;
+}
+
+.custom-hr {
+    background-color: #c2c2c2;
+    height: 1px;
+    border: none;
+}
+
+.job-roles {
+    display: flex;
+    align-items: center;
+}
+
+.role-img {
+    float: left;
+    height: 25px;
+    width: 25px;
+    margin-right: 5px;
+    border-radius: 50%;
+    border: 1px solid #3F3F3F;
+}
+
+.apply-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    background-color: #3FD28B;
+    font-family: Quicksand-SemiBold;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+}
+
+.internship {
+    background-color: #EEDD6B;
+    font-family: Quicksand-Medium;
+    border-radius: 10px;
+    font-size: 12px;
+    width: 260px;
+    padding: 0px 12px;
+    text-align: center;
+}
